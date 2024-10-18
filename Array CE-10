@@ -180,8 +180,146 @@ int main(){
 }
 
 7.Lower matrix sum
+Sample input
+3
+1 2 3 
+4 5 6
+7 8 9
+Sample output
+34
 
+#include<iostream>
+using namespace std;
+
+int main(){
+  int size, sum=0;
+  cin >> size;
+
+  int arr[size][size];
+
+  for (int ind = 0; ind < size; ind++)
+  {
+    for (int ind1 = 0; ind1 < size; ind1++) 
+      cin >> arr[ind][ind1];
+  }
+  for (int ind = 0; ind < size; ind++)
+  {
+    for (int ind1 = 0; ind1 <=ind; ind1++) 
+         sum += arr[ind][ind1];
+  }
+
+  cout << sum;
+
+  return EXIT_SUCCESS;
+}
 8.Smallest/Largest in array
+Sample input
+5
+23 45 16 78 39
+Sample output
+Smallest: 16
+Largest: 78
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int size;
+  cin >> size;
+
+  int arr[size];
+
+  for (int ind = 0; ind < size; ind++)
+        cin >> arr[ind];
+  
+    int smallest = INT_MAX;
+    int largest = INT_MIN;
+
+    for (int ind = 0; ind < size; ind++) {
+        if (arr[ind] < smallest) {
+            smallest = arr[ind];
+        }
+        if (arr[ind] > largest) {
+            largest = arr[ind];
+        }
+    }
+    cout<<"Smallest: "<<smallest<<"\n"<<"Largest: "<<largest;
+  return EXIT_SUCCESS;
+}
+
 9. Sum even print sum else print product
-10.Sum of diagonals
+Sample input
+5
+2 4 6 8 10
+Sample output
+30
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int size,sum=0,pro=1;
+  cin >> size;
+  int arr[size];
+
+  for (int ind = 0; ind < size; ind++)
+    {
+        cin >> arr[ind];
+        sum+=arr[ind];
+    }
+    if(sum%2==0)
+    cout<<sum;
+    else
+    {
+        for (int ind = 0; ind < size; ind++)
+    {
+        pro*=arr[ind];
+    }
+    cout<<pro;
+    }
+    return EXIT_SUCCESS;
+}
+
+
+10.Sum of main diagonal
+Sample input 
+3
+1 2 3 
+4 5 6
+7 8 9
+Sample output
+15
+
+#include<iostream>
+using namespace std;
+
+int main(){
+  int size, sum=0;
+  cin >> size;
+
+  int arr[size][size];
+
+  for (int ind = 0; ind < size; ind++)
+  {
+    for (int ind1 = 0; ind1 < size; ind1++) 
+      cin >> arr[ind][ind1];
+  }
+  for (int ind = 0; ind < size; ind++)
+  {
+    for (int ind1 = 0; ind1 <size; ind1++) 
+    {
+        if(ind==ind1)
+         sum += arr[ind][ind1];
+  }
+  }
+
+  cout << sum;
+
+  return EXIT_SUCCESS;
+}
+
+
 
