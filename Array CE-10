@@ -1,0 +1,187 @@
+1. //Sum * (index+1)
+Smaple input
+5
+1 2 3 4 5
+Sample output
+55
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int size, sum = 0;
+  cin >> size;
+  int arr[size];
+  for (int index = 0; index < size; index++) {
+    cin >> arr[index];
+    sum += arr[index] * (index + 1);
+  }
+  cout << sum;
+  return 0;
+}
+
+2.Adjacent stick game
+Smaple input
+4
+1 3 5 2
+Sample output
+3
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int size, sum = 0;
+  cin >> size;
+  int arr[size];
+  
+  for (int index = 0; index < size; index++) {
+    cin >> arr[index];
+  }
+
+  for (int index = 0; index < size; index += 2) {
+    if (arr[index] > arr[index + 1])
+      sum += arr[index+1];
+    else
+      sum += arr[index];
+  }
+
+  cout << sum;
+
+  return 0;
+}
+
+3. Number of Midaged person in Flight
+Sample input
+3 
+25 17 20
+33 26 30
+4 7 3
+Sample output
+2
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int size;
+  cin >> size;
+  int arr[size][size];
+  int noOfMidAged = 0;
+
+  for (int index = 0; index < size; index++) {
+    for (int index1 = 0; index1 < size; index1++) {
+      cin >> arr[index][index1];
+      if (index == index1 && 18 <= arr[index][index1] && arr[index][index1] <= 60) {
+        noOfMidAged++;
+      }
+    }
+  }
+
+  cout << noOfMidAged;
+
+  return 0;
+}
+
+4. First Repeating element
+Sample input
+7
+10 5 3 5 3 4 6
+Sample output
+5
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size;
+    cin >> size;
+    int arr[size];
+    
+    for (int index = 0; index < size; index++) {
+        cin >> arr[index];
+    }
+
+    for (int index = 0; index < size; index++) {
+        for (int next = index + 1; next < size; next++) {
+            if (arr[index] == arr[next]) {
+                cout << "The first repeating element: " << arr[index];
+                return 0; 
+            }
+        }
+    }
+    cout << "There are no repeating elements.";
+    return 0;
+}
+
+5.Most Occuring element
+Sample input
+7
+1 2 3
+Sample output
+1
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size,count1 = 0, count2 = 0, count3 = 0;
+    cin >> size;
+    int arr[size];
+
+    for (int ind = 0; ind < size; ind++) 
+        cin >> arr[ind];
+    
+    for (int ind = 0; ind < size; ind++)
+    {
+        if (arr[ind] == 1)
+            count1++;
+        else if (arr[ind] == 2) 
+            count2++;
+        else if (arr[ind] == 3) 
+            count3++;
+    }
+
+    if (count1 >= count2 && count1 >= count3) 
+        cout << 1;
+    else if (count2 >= count1 && count2 >= count3) 
+        cout << 2;
+    else 
+        cout << 3;
+    return 0;
+}
+
+
+6.Nurikable logical game
+Sample input
+3
+20 20 1
+3 20 20
+20 9 20
+Sample output
+13
+
+#include<iostream>
+using namespace std;
+
+int main(){
+  int size, sum=0;
+  cin >> size;
+
+  int arr[size][size];
+
+  for (int ind = 0; ind < size; ind++) {
+    for (int ind1 = 0; ind1 < size; ind1++) {
+      cin >> arr[ind][ind1];
+      if (arr[ind][ind1] != 20)
+      sum += arr[ind][ind1];
+    }
+  }
+
+  cout << sum;
+
+  return EXIT_SUCCESS;
+}
+
+7.Lower matrix sum
+
+8.Smallest/Largest in array
+9. Sum even print sum else print product
+10.Sum of diagonals
+
