@@ -1,0 +1,22 @@
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int row,col,sum=0;
+    cin>>row>>col;
+    int arr[row][col];
+        for(int index=0;index<row;index++)
+        {
+            for(int index1=0;index1<col;index1++)
+            cin>>arr[index][index1];
+        }
+        for(int index=0;index<row;index++)
+        {
+            for(int index1=index;index1<col;index1++)
+            sum+=arr[index][index1];
+        }
+    cout<<sum;
+return 0;    
+}
+
