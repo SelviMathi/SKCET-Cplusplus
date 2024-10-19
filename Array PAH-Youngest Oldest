@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int size,old=0;
+    cin>>size;
+    int arr[size];
+        for(int index=0;index<size;++index)
+            cin>>arr[index];
+        int young=arr[0];
+        for(int index=0;index<size;++index)
+           {
+            if(young>arr[index])
+            young=arr[index];
+            else if(old<arr[index])
+            old=arr[index];
+           } 
+            cout<<young<<" "<<old;
+    
+    return 0;    
+}
