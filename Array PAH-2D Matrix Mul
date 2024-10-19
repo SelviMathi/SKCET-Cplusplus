@@ -1,0 +1,40 @@
+// You are using GCC
+#include<iostream>
+using namespace std;
+int main()
+{
+    int size;
+    cin>>size;
+    int arr[size][size],arr1[size][size],res[size][size]={0};
+    for(int index=0;index<size;++index)
+    {
+        for(int index1=0;index1<size;++index1)
+            cin>>arr[index][index1];
+    }
+    for(int index=0;index<size;++index)
+    {
+        for(int index1=0;index1<size;++index1)
+            res[index][index1]=0;
+    }
+    for(int index=0;index<size;++index)
+    {
+        for(int index1=0;index1<size;++index1)
+            cin>>arr1[index][index1];
+    }
+    for(int index=0;index<size;++index)
+    {
+        for(int index1=0;index1<size;++index1)
+        {
+            for(int mul=0;mul<size;++mul)
+        
+        res[index][index1]+=arr[index][mul]*arr1[mul][index1];
+        }
+    }
+     for(int index=0;index<size;index++)
+    {
+        for(int index1=0;index1<size;index1++)
+            cout<<res[index][index1]<<" ";
+            cout<<"\n";
+    }
+return 0;    
+}
