@@ -1,0 +1,22 @@
+// You are using GCC
+// You are using Java
+// You are using GCC
+#include<iostream>
+using namespace std;
+int main()
+{
+    int size;
+    cin>>size;
+    if(size>=1 && size<=10)
+    {
+         int arr[size];
+        for(int index=0;index<size;++index)
+            cin>>arr[index];
+    
+        for(int index=0;index<size;++index)
+        cout<<(arr[index]/2)<<" ";
+    }
+    else
+    cout<<size<<":Invalid";
+return 0;    
+}
