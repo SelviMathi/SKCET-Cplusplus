@@ -1,0 +1,25 @@
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int size;
+    cin>>size;
+    if(size<=10)
+    {
+    int arr[size];
+        for(int index=0;index<size;++index)
+            cin>>arr[index];
+        for(int start=0,end=size-1;start<end;start++,end--)
+        {
+            int temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+        }
+        for(int index=0;index<size;++index)
+            cout<<arr[index]<<" ";
+    }
+    else
+    cout<<"Invalid";
+    return 0;    
+}
