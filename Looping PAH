@@ -1,0 +1,376 @@
+1. Sample test cases :
+Input 1 :
+7
+Output 1 :
+1 
+2 4 
+3 6 9 
+4 8 12 16 
+5 10 15 
+6 12 
+7 
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int limit, value = 1;
+    cin >> limit;
+
+    if (limit % 2 == 0)
+    {
+        cout << "Enter ODD number of rows" << endl;
+    }
+    else
+    {
+        // Upper half of the pattern
+        for (int row = 1; row <= limit / 2 + 1; row++)
+        {
+            for (int col = 1; col <= row; col++)
+            {
+                cout << value * col << " ";
+            }
+            cout << "\n";
+            value++;
+        }
+
+        // Lower half of the pattern
+        for (int row = 1; row <= limit / 2 ; row++)
+        {
+            for (int col = 1; col <=limit/2+1-row; col++)
+            {
+                cout << value * col << " ";
+            }
+            cout << "\n";
+            value++;
+        }
+
+    }
+
+    return 0;
+}
+
+2.   Sample test cases :
+Input 1 :
+7
+Output 1 :
+1
+
+2 2
+
+3 3 3
+
+4 4 4 4
+
+5 5 5 5 5
+
+6 6 6 6 6 6
+
+7 7 7 7 7 7 7 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int limit;
+    cin >> limit;
+    for (int row = 1; row <= limit ; row++)
+        {
+            for (int col = 1; col <= row; col++)
+                    cout << row << " ";
+                    cout << "\n";
+        }
+        return 0;
+}
+
+3. Collataz problem
+Sample test cases :
+Input 1 :
+5
+Output 1 :
+5
+16
+8
+4
+2
+1
+5
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int num=0;
+    while (n != 1)
+    {
+        cout << n << " "; 
+        if (n % 2 == 0)
+        {
+            n = n / 2;
+            num++;
+        }
+        else
+        {
+            n = 3 * n + 1; 
+            num++;
+        }
+    }
+    cout << 1 <<" "<<num<< endl; 
+    return 0;
+}
+4.
+Output:
+1
+
+2 3
+
+4 5 6
+
+7 8 9 10
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int limit,value=1;
+    cin >> limit;
+    for (int row = 1; row <= limit ; row++)
+        {
+            for (int col = 1; col <row; col++)
+                    cout << value++ << " ";
+                    cout << "\n";
+        }
+        return 0;
+}
+
+5.Kyle number
+#include <iostream>
+using namespace std;
+int main()
+{
+    int start, end;
+
+    cin >> start >> end;
+
+    for (int i = start; i <= end; i++)
+    {
+        int num = i;
+        bool isUnique = true;  // Flag to check if digits are unique
+
+        // Outer loop to extract each digit
+        while (num > 0 && isUnique)
+        {
+            int currentDigit = num % 10;  // Extract the last digit
+            int temp = num / 10;// Remove the last digit and compare with the rest
+
+            // Inner loop to compare currentDigit with remaining digits
+            while (temp > 0)
+            {
+                if (currentDigit == temp % 10)  // Check if the digit repeats
+                {
+                    isUnique = false;           // Digits are not unique
+                    break;                      // Exit the loop if not unique
+                }
+                temp /= 10;  // Move to the next digit
+            }
+            num /= 10;  // Remove the last digit for the next iteration
+        }
+
+        if (isUnique)  // If digits are unique, print the number
+                    cout << i << " ";  // Print the unique digit number
+        }
+
+    return 0;
+}
+
+6.Hollow equilateral triangle
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+        int rows;
+        cin>>rows;
+
+        for (int i=1; i<=rows; i++)
+        {
+          
+            for (int j=rows; j>i; j--)
+            {
+               cout<<" ";
+            }
+         
+            for (int k=1; k<=(i * 2) -1; k++)
+            {
+                if( k == 1 || k == (i * 2) -1 || i == rows)
+                   cout<<"*";
+                else
+                    cout<<" ";
+            }
+            cout<<"\n";
+        }
+    return 0;
+}
+
+7.Prime number or not & its range
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number,start,end;
+    cin >> number >> start >> end;
+
+    bool isPrime = true;
+    if (number <= 1) {
+        isPrime = false;
+    } else {
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime)
+        cout << number << " is a prime number." << endl;
+    else
+        cout << number << " is not a prime number." << endl;
+
+    
+    for (int i = start; i <= end; i++) {
+        isPrime = true; 
+        if (i <= 1) {
+            isPrime = false;
+        } else {
+            for (int j = 2; j * j <= i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            cout << i << " ";  
+        }
+    }
+
+    cout << endl;  
+    return 0;
+}
+
+
+8.AES number
+Sample test cases :
+Input 1 :
+1 20
+Output 1 :
+5
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,i,count=0,j=0;
+    cin>>a>>b;
+    for(i=2;a<=b;i++)
+    {
+        if(a%i==0)
+	{
+	count++;
+	}
+        if(i>=a/2)
+	{
+	if(count==2)
+	{
+	j++;
+	count=0;
+	}
+	i=1;
+	a++;
+	count=0;
+	}
+    }
+    cout<<j;
+    return 0;
+}
+9.Sample test cases :
+Input 1 :
+6
+Output 1 :
+1 2 3 6 9 18 
+
+Sol:
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n , i , first = 1 , second = 2 , val ;
+  cin >> n ;
+  
+  for ( i = 1 ; i <= n ; i++ )
+  {
+    if ( i == 1 )
+    cout << i << " " ;
+    
+    else if ( i == 2 )
+      cout << i << " " ;
+    
+    else
+    {
+      if ( i % 2 == 1 )
+      {
+        val = first + second ;
+        first = second ; 
+        second = val ;
+        cout << val << " " ;
+      }
+      else
+      {
+        val = 2 * second ;
+        first = second ;
+        second = val ;
+        cout << val << " " ;
+      }
+      
+    }
+  }
+  return 0 ;
+}
+
+10.
+1
+
+1 2
+
+1 2 3
+
+1 2 3 4
+
+1 2 3 4 5
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int limit;
+    cin >> limit;
+    for (int row = 1; row <= limit ; row++)
+        {
+            for (int col = 1; col <=row; col++)
+                    cout << col << " ";
+                    cout << "\n";
+        }
+        return 0;
+}
