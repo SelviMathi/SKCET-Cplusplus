@@ -1,4 +1,15 @@
-1.
+1. Caption contest
+Case 1: Both characters are equal (e.g., a and a):
+No change.
+Case 2: One character is ?:
+Min: No increase (replace ? with the other character).
+Max: Increase by 1 (replace ? with a different character).
+Case 3: Both characters are ?:
+Min: No increase (replace both with the same character).
+Max: Increase max by 1 (replace with different characters).
+Case 4: Characters are different (e.g., a and b):
+Min: Increase min by 1.
+Max: Increase max by 1.
 Sample Input 1: str1 = "abc?e" and str2 = "abde?"
 
 Index	str1	str2	Comparison
@@ -41,7 +52,8 @@ int main()
     return 0;
 }
 
-2. sample 
+2. Alternating code
+sample 
 input 1  ababab
 output 1  yes
 input 2 abc
@@ -121,6 +133,10 @@ int main()
     return 0;
 }
 5. Wildcard matching
+Case 1: If X[i] == Y[i] (both characters are equal letters), then they match.
+Case 2: If X[i] == '?' or Y[i] == '?', the characters match (since ? can represent any letter).
+Case 3: If X[i] != Y[i] and neither character is ?, they do not match.
+
 // You are using GCC
 
 #include<iostream>
