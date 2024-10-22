@@ -1,0 +1,92 @@
+1.Right triangle or not with given dots
+// You are using GCC
+#include<iostream>
+#include<cmath>
+using namespace std;
+int find(int x)
+{
+      bool value=true;
+      for(int i=1;i<x;i++)
+      {
+         if((i*(i+1)/2)==x)
+         break;
+         else if((i*(i+1)/2)>x)
+         {value=false;
+         break;}
+      
+      }
+      return value;
+      
+ 
+}
+int main()
+{
+    int num;
+    cin>>num;
+    
+    if(find(num))
+    cout<<"We can create Right Triagle of dots with "<<num<<"dots";
+    else
+    cout<<"We can't create Right Triagle of dots with "<<num<<"dots";
+    
+    return 0;
+}
+
+2.Reverse the digits
+#include<iostream>
+using namespace std;
+int rev=0;
+void reverse(int x)
+{
+       if(x!=0)
+       {
+        rev=(rev*10)+(x%10);
+       reverse(x/10);
+       }
+}
+int main()
+{
+    int num;
+    cin>>num;
+    reverse(num);
+    cout<<rev;
+    return 0;
+}
+
+3.Convert time 
+#include<bits/stdc++.h>
+using namespace std;
+float dec_time(float a,float b,float c)
+{
+    cout<<(a+(b/60)+(c/3600))<<"\n"<<((a*60)+(b)+(c/60))<<"\n"<<((a*3600)+(b*60)+(c));
+}
+int main()
+{
+    float h,m,s;
+    cin>>h>>m>>s;
+    dec_time(h,m,s);
+    return 0;
+}
+
+4.Perimeter 
+#include<iostream>
+using namespace std;
+int peri(const int,const int b);
+int main()
+{
+    int l,b,res;
+    cin>>l>>b;
+    res=peri(l,b);
+    cout<<res;
+    return 0;
+}
+int peri(int a,int b)
+{
+    return 2*(a+b);
+}
+
+5.Countway
+
+
+
+2.
