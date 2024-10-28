@@ -1,0 +1,226 @@
+1. Occurrence of character
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+class Occurrence
+{
+    private:
+    string name;
+    char ch;
+    
+   public:
+   void set(string str_value,char ch_value)
+    {
+        name=str_value;
+        ch=ch_value;
+        
+    }
+    int count()
+    {
+    int count=0;
+    for(char c:name)
+    {
+        if(c==ch)
+        count++;
+    }
+        return count;    
+    }
+    
+};
+int main()
+{
+    Occurrence obj;
+    string str;
+    char c;
+    getline(cin,str);
+    cin>>c;
+    obj.set(str,c);
+    cout<<obj.count();
+    return 0;
+    
+}
+
+2. Class Person
+
+// You are using GCC
+
+#include<iostream>
+#include<cctype>
+#include<string>
+using namespace std;
+class Person
+{
+    private:
+    string name,gender;
+   int age;
+  
+   public:
+   void set(string str_value,int age_value,string gender_value)
+    {
+        name=str_value;
+        age=age_value;
+        gender=gender_value;
+        
+    }
+    void display()
+    {
+        string upper_name,upper_gender;
+        for(char ch: name)
+        upper_name+=toupper(ch);
+        for(char ch1: gender)
+        upper_gender+=toupper(ch1);
+        
+        cout<<upper_name<<" "<<age<<" "<<upper_gender;
+    }
+   
+    
+};
+int main()
+{
+   Person obj;
+    string str,gender;
+    int age;
+    cin>>str>>age>>gender;
+    obj.set(str,age,gender);
+    obj.display();
+    return 0;
+    
+}
+3. Class VoC
+
+// You are using GCC
+// You are using GCC
+
+#include<iostream>
+#include<cctype>
+#include<string>
+using namespace std;
+class VoC
+{
+    private:
+    char ch; 
+    public:
+   VoC(char ch_value)
+    {
+        ch=ch_value;
+        
+    }
+    void alph()    {
+       char lower=tolower(ch);
+           if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+              cout<<lower<<" : "<<"Vowel";
+            else
+                cout<<lower<<" : "<<"Consonant";
+      
+    }
+   
+    
+};
+int main()
+{
+   VoC obj;
+    char input;
+    cin>>input;
+    obj.set(input);
+    obj.alph();
+    return 0;
+    
+}
+
+4.dayOfWeek
+
+#include<iostream>
+#include<string>
+using namespace std;
+class dayOfWeek
+{
+    private:
+    int value; 
+    public:
+   void set(int input_value)
+    {
+        value=input_value;
+        
+    }
+    void display()    {
+       switch(value)
+       {
+           case 0:
+           cout<<"Weekend";
+           break;
+           case 1:
+           cout<<"Sunday";
+           break;
+           case 2:
+           cout<<"Monday";
+           break;
+           case 3:
+           cout<<"Tuesday";
+           break;
+           case 4:
+           cout<<"Wednesday";
+           break;
+           case 5:
+           cout<<"Thursday";
+           break;
+           case 6:
+           cout<<"Friday";
+           break;
+           case 7:
+           cout<<"Saturday";
+           break;
+           default:
+           cout<<"Invalid";
+           
+       }
+      
+    }
+   
+    
+};
+int main()
+{
+   dayOfWeek obj;
+    int input;
+    cin>>input;
+    obj.set(input);
+    obj.display();
+    return 0;
+    
+}
+
+5. BMI
+
+#include<iostream>
+using namespace std;
+
+class BMI
+{
+  public:
+  void bmi(int n,float m)
+  {
+  float b;
+  b=n/(m*m);
+  if( b < 18.5)
+    cout<<"U";
+  else if (18.5 <= b && b< 25.0 )
+    cout<<"N";
+  else if(25.0 <= b && b< 30.0)
+    cout<<"H";
+  else
+    cout<<"O";
+  }
+};
+
+int main()
+{
+      int weight;
+      cin>>weight;
+      float height;
+      cin>>height;
+      BMI obj ;
+      obj.bmi(weight,height);
+  
+}
