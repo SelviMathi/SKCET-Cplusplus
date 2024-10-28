@@ -86,7 +86,33 @@ int peri(int a,int b)
 }
 
 5.Countway
+#include<iostream>
+#include<cmath>
+using namespace std;
 
-
-
-2.
+int count(int x,int n,int num)
+{
+    int i;
+    i=x-pow(num,n);
+    if(i==0)
+    {
+        return 1;
+    }
+    if(i<0)
+    {
+        return 0;
+    }
+    else
+    return count(i,n,num+1)+count(x,n,num+1);
+}
+int countWays(int x,int n)
+{
+    return count(x,n,1);
+}
+int main()
+{
+    int x,n;
+    cin>>x>>n;
+    cout<<countWays(x,n);
+    return 0;
+}
