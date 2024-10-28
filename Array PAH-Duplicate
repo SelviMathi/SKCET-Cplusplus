@@ -1,1 +1,62 @@
 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    // Validate the size of the array
+    if (n <= 0) {
+        cout << "Invalid Input" << endl;
+        return 0;
+    }
+
+    int* a = new int[n];
+
+    // Read input values into the array
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int target = -1;
+    bool found = false;
+
+    // Search for the first non-duplicate element
+    for (int i = 0; i < n; i++) {
+        int k = a[i];
+
+        // Skip if the current element has already been considered
+        if (k == -1) continue;
+
+        found = true; // Assume it's a valid target
+        a[i] = -1;    // Mark as considered
+
+        // Check for duplicates
+        for (int j = i + 1; j < n; j++) {
+            if (k == a[j]) {
+                a[j] = -1; // Mark the duplicate
+                found = false; // Reset found since this target is a duplicate
+                break; // No need to check further for this target
+            }
+        }
+
+        // If we found a non-duplicate, we can print it and break
+        if (found) {
+            target = k; // Store the target
+            break;
+        }
+    }
+
+    // Print the result
+    if (target != -1) {
+        cout << target << endl; // Print the first non-duplicate
+    } else {
+        cout << "Invalid Input" << endl; // No valid target found
+    }
+
+    // Clean up dynamically allocated memory
+    delete[] a;
+
+    return 0;
+}
