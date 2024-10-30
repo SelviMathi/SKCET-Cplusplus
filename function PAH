@@ -1,0 +1,39 @@
+1. Triangle
+
+int triangle(int n)
+{
+    int sum=0;
+        if(n==1)
+        return 1;
+        else 
+        return (n+triangle(n-1));
+    
+}
+
+2.To the magic show
+#include<iostream>
+using namespace std;
+int isReachable(int,int,int,int);
+    int main()
+{
+    int x1,y1,x2,y2;
+    cin>>x1>>y1>>x2>>y2;
+    if(isReachable(x1,y1,x2,y2))
+    cout<<"True";
+    else
+    cout<<"False";
+    return 0;
+}
+int isReachable(int a1,int b1,int a2,int b2)
+{
+   if(a1==a2 && b1==b2)
+   return 1;
+   if(a2<a1 || b2<b1 || a2==b2)
+   return 0;
+   if(a2>b2)
+   return (a1,b1,a2-b2,b2);
+   else
+   return (a1,b1,a2,b2-a2);
+}
+
+3.
