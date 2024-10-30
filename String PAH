@@ -1,3 +1,4 @@
+
 1.String compare
 // You are using GCC
 #include<iostream>
@@ -112,54 +113,36 @@ int main()
     return 0;
 }
 6.Peter at challenge
-7.Number Challenge
-
-Mike set off with great zeal to the "Kracker Jack Fun Fair 2017". There were numerous activities in the fair, though Mike being a math expert, liked to participate in the Number Challenge.
-
-
-
-Mike was given a string D of numbers containing only digits 0's and 1's. His challenge was to make the number have all the digits the same. For that, he should change exactly one digit, i.e. from 0 to 1 or from 1 to 0. If it is possible to make all digits equal (either all 0's or all 1's) by flipping exactly 1 digit then he has to output "Yes", else print "No" (without quotes).
+7.Number Challenge-MIKE
 
 
 8.Little Authors
 
-"Little Authors" Slogan Writing Competition was organized for School students at Orchids Senior School. Any student who is creative and effective in communicating ideas in short, yet powerful about any instant topic can participate in the competition. The important guideline for the contest is that the Slogan should contain a string where the number of occurrences of some character in it is equal to the sum of the numbers of occurrences of other characters in the string. 
-
- 
-
-Write a program to help the event organizers to determine whether the submitted Slogans adhere to the given condition.
 9.Balls for Challenge
 
-The Circoloco Children Carnival is the City’s largest and most successful event dedicated to children and families. The main focus at the carnival is the workshop arena where kids can participate in engaging and educational activities.
-
- 
-
-Charlie, a little boy accompanied by his Mom visited the fair, where he participated in the "Balls for Challenge" activity. He was given many balls of white and black colors. During the play, he arranged the balls into two rows both consisting of N number of balls. These two rows of balls are given to you in the form of strings X, Y. Both these strings consist of 'W' and 'B', where 'W' denotes a white-colored ball and 'B' a black colored.
-
-
-
-Other than these two rows of balls, Charlie has an infinite supply of extra balls of each color. He wants to create another row of N balls, Z in such a way that the sum of Hamming distance between X and Z, and hamming distance between Y and Z is maximized.
-
-
-
-Hamming Distance between two strings X and Y is defined as the number of positions where the color of balls in row X differs from the row Y ball at that position. e.g. Hamming distance between "WBB", "BWB" is 2, as, at positions 1 and 2, corresponding colors in the two strings differ. As there can be multiple such arrangements of row Z, Charlie wants you to find the lexicographically smallest arrangement which will maximize the above value.
-
-
-
-Input format :
-The first line of the input will contain a string X denoting the arrangement of balls in the first row.
-
-The second line of the input will contain the string Y denoting the arrangement of balls in the second row.
-
-Output format :
-Output a single line containing the string of length N denoting the arrangement of colors of the balls belonging to row Z.
-
-Sample test cases :
-Input 1 :
-WBWB
-WBBB
-Output 1 :
-BWWW
-
 10.Delete vowel
+
+#include <iostream>
+#include <string>
+using namespace std;
+ void removeVowels(string str)
+  {
+      string result;
+        for (char ch : str) {
+             ch = tolower(ch);
+        if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u') {
+            result += ch;
+        }
+    }
+    cout<< result;
+}
+
+int main() {
+    string input;
+    getline(cin, input);
+    removeVowels(input);
+
+    return 0;
+}
+
 
