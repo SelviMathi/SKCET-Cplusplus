@@ -36,4 +36,103 @@ int isReachable(int a1,int b1,int a2,int b2)
    return (a1,b1,a2,b2-a2);
 }
 
-3.
+3.Lastnonzerodigit
+#include <iostream>
+using namespace std;
+
+int lastNonZeroDigit(int n) {
+    int res = 1;
+    int count2 = 0, count5 = 0;
+
+    // Process numbers from 1 to n
+    for (int i = 1; i <= n; i++) {
+        int num = i;
+
+        // Count factors of 2
+        while (num % 2 == 0) {
+            num /= 2;
+            count2++;
+        }
+
+        // Count factors of 5
+        while (num % 5 == 0) {
+            num /= 5;
+            count5++;
+        }
+
+        // Multiply remaining part after removing factors of 2 and 5
+        res = (res * num) % 10;
+    }
+
+    // Balance extra 2s if we have more 2s than 5s
+    int extraTwos = count2 - count5;
+    for (int i = 0; i < extraTwos; i++) {
+        res = (res * 2) % 10;
+    }
+
+    return res;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout<<lastNonZeroDigit(n);
+    return 0;
+}
+
+4.summation
+#include <iostream>
+using namespace std;
+
+int sumOfFirstNNumbers(int n) {
+    return (n * (n + 1)) / 2;
+}
+
+int summation(int n, int m) {
+    if (m == 1) {
+        return sumOfFirstNNumbers(n);
+    }
+
+    return summation(sumOfFirstNNumbers(n), m - 1);
+}
+
+int main() {
+    int n, m;
+    cin >> n>> m;
+    cout<<summation(n, m);
+     return 0;
+}
+5.Charlie challenge
+#include <iostream>
+#include <cmath>
+using namespace std;
+int sum(int n)
+{
+retrun pow(2,n+1)-1;
+}
+int main() {
+    int N;
+    cin >> N;
+    cout<<sum(N);
+    return 0;
+}
+6.Print 1 to N
+#include <iostream>
+using namespace std;
+
+void printNumbers(int N) {
+    if ( N<1) {
+        return;
+    }
+    printNumbers(N-1);
+    cout <<N << " ";
+
+}
+
+int main() {
+    int N;
+    cin >> N;
+    printNumbers(N);
+    return 0;
+}
+7.
