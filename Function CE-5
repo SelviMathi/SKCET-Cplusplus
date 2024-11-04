@@ -56,7 +56,7 @@ int main()
 3.Convert time 
 #include<bits/stdc++.h>
 using namespace std;
-float dec_time(float a,float b,float c)
+void dec_time(float a,float b,float c)
 {
     cout<<(a+(b/60)+(c/3600))<<"\n"<<((a*60)+(b)+(c/60))<<"\n"<<((a*3600)+(b*60)+(c));
 }
