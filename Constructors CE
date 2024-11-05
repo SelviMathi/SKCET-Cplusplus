@@ -1,0 +1,198 @@
+1. Constructor Overloading:
+Create a class Overloading with the following private attributes,
+name - string
+Day - string
+temp - int
+Include default constructor Overloading() with default values name="Argentina" and temp=29 and Parameterized constructor1 Overloading(string name, int temp) and parameterized constructor2 Overloading(string name, string day, int temp). In the main method call the overloaded constructors with appropriate values.
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+ 
+class Overloading
+{
+   private:
+	string name;
+	string Day;
+	int temp;
+ 
+   public:
+	Overloading() 
+	{
+	   name = "Argentina";
+	   temp = 29;
+	   cout<<name<<" Yesterday Temperature: "<<temp<<"°"<<endl;
+	}
+	Overloading(string nam, int tem ) 
+	{
+	   name = nam;
+	   temp = tem;
+	   cout<<name<<" Today Temperature: "<<temp<<"°"<<endl;
+	}
+	Overloading(string nam, string day, int tem ) 
+	{
+	   name = nam;
+	   temp = tem;
+	   Day  = day;
+	   cout<<name<<" "<<Day<<" Temperature: "<<temp<<"°"<<endl;
+	}			
+};
+ 
+int main()
+{
+   string name,day;
+   int tem;
+   Overloading obj1;
+   cin>>name>>tem;
+   Overloading obj2(name, tem);
+   cin>>name>>day>>tem;
+   Overloading obj(name,day,tem);
+ 
+   return 0;
+}
+
+2.Write a program to welcome a person using the default constructor.
+Create a class Welcome with a default constructor which prints "Welcome ".
+Create a class Hello with a default constructor which prints "Hello ".
+In the main method prompt the user to enter the name of the person and create objects for classes Welcome and Hello.
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Welcome{
+    public:
+    Welcome(){
+        cout<<"Welcome ";
+    }
+};
+class Hello{
+    public:
+    Hello(){
+        cout<<"Hello ";
+    }
+};
+int main(){
+    string name;
+    cin>>name;
+    Welcome W;
+    cout<<name<<endl;
+    Hello H;
+    cout<<name;
+}
+
+3.Problem Statement:
+Constructor Overloading:
+Create a class Box with the following public attributes
+double width
+double height
+double depth
+Include default constructor Box()[default value is 0], parameterized constructor1 Box(double w, double h, double d), Parameterized constructor2 Box(double len) and a method double volume() which return the volume
+
+#include<iostream>
+using namespace std;
+
+class Box
+{
+    public:
+    double width, height, depth;
+    Box(double w, double h, double d)
+    {
+        width = w;
+        height = h;
+        depth = d;
+    }
+  
+    Box()
+    {
+        width = height = depth = 0;
+    }
+  
+    Box(double len)
+    {
+        width = height = depth = len;
+    }
+  
+    double volume()
+    {
+        return width * height * depth;
+    }
+};
+int main()
+    {
+        double h,d,l,c;
+        cin>>h>>d>>l;
+        Box mybox1;
+        Box mybox2(h, d, l);
+        
+        cin>>c;
+        Box mycube(c);
+  
+        double vol;
+  
+        vol = mybox1.volume();
+        cout<<"Volume of mybox1 is "<<vol<<endl;
+  
+        vol = mybox2.volume();
+        cout<<"Volume of mybox2 is "<<vol<<endl;
+  
+        
+  
+        vol = mycube.volume();
+        cout<<"Volume of mycube is "<<vol<<endl;
+
+}
+
+4.Problem Statement:
+Write a program to get the employee id, name, and salary of N professors and print the details of the professors whose salary is greater or equal to 20000.
+Create a class Professor with the following public attributes,
+id - int
+name - string
+salary - int
+Include default constructor Professor() and parameterized constructor Professor (int id, string name, int salary) and a method display() which prints the details.
+In the main method create N objects for the class Professor and call the necessary functions.
+
+#include <iostream>
+#include<string>
+using namespace std;
+class Professor {
+    public:
+    int id;
+    string name;
+    int salary;
+    Professor(){}
+    Professor (int i, string n, int s)
+    {
+        id = i;
+        name = n;
+        salary = s;
+    }
+    void display ()
+    {
+        cout<<id<<" "<<name<<" "<<salary<<endl;
+    }
+};
+int main() {
+    int i,sal,n;
+    string name;
+    cin>>n;
+    Professor p[n];
+    for(int j=0;j<n;j++){
+        cin>>i>>name>>sal;
+        p[j]=Professor(i, name, sal);
+    }
+    
+    for(int j=0;j<n;j++){
+        if(p[j].salary>=20000)
+        p[j].display();
+    }
+    return 0;
+}
+
+5.Problem Statement:
+Write a program to find the area of the wall. Create a class Wall with the following private attributes
+length - double
+height - double
+Include parameterized constructor Wall(double length, double height) and a method calculateArea() which returns the area of the wall. In the main method get the length and breadth of two walls from the user.
+
