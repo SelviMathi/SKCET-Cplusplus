@@ -120,11 +120,11 @@ class VoC
 };
 int main()
 {
-   VoC obj;
+   
     char input;
     cin>>input;
-    obj.set(input);
-    obj.alph();
+   VoC obj(input);
+obj.alph();
     return 0;
     
 }
