@@ -1,0 +1,155 @@
+1.Create a class named Box with length as its private attribute.
+Create a constructor and assign the length as 0.
+Create a member function get() - get the value of length as input.
+Include a Friend Function
+int printVolume(Box) - calculate the volume of the box and return it.
+In the main method, create an object for Box and call the necessary methods.
+
+#include <iostream>    
+using namespace std;    
+class Box    
+{    
+    private:    
+        int length;    
+    public:    
+        Box(): length(0) { }    
+        int get() {
+            cin>>length;
+        }
+        friend int printVolume(Box); 
+};    
+int printVolume(Box b)    
+{    
+   int volume = b.length*b.length*b.length;
+    return volume;    
+}    
+int main()    
+{    
+    Box b;    
+    b.get();
+    cout<< printVolume(b)<<endl;    
+    return 0;    
+}    
+
+2.Problem statement:
+
+Write a program to demonstrate union to store and display employee details such as Employee ID, Employee Name, Date of birth, Date of Joining, and Current salary.
+Use union name as union Employee
+Input format :
+Employee ID as integer
+Employee Name as string
+Date of birth as string
+Date of joining as string
+Salary as float
+
+#include<iostream>
+using namespace std;
+
+union Employee{
+    int empID;
+    char empname[20];
+    char dob[10];
+    char doj[10];
+    float salary;
+};
+
+int main(){
+    union Employee emp;
+    cin>>emp.empID;
+    cout<<"ID : "<<emp.empID<<"\n",
+    
+    cin>>emp.empname;
+    cout<<"Name : "<<emp.empname<<"\n";
+    
+    cin>>emp.dob;
+    cout<<"DOB : "<<emp.dob<<"\n";
+    
+    cin>>emp.doj;
+    cout<<"DOJ : "<<emp.doj<<endl;
+    
+    cin>>emp.salary;
+    cout<<"Salary : "<<emp.salary;
+  }
+3.Create a class Rectangle with length and breadth as its attributes along with a constructor.
+Declare a friend function
+void calcArea(sample s) - prints the area of the rectangle.
+In the main method, create an object for rectangle class and call the methods.
+
+#include <bits/stdc++.h>
+#include <string>
+using namespace std;
+class Rectangle{
+   int length, breadth;
+  
+   public:
+   Rectangle(int length, int breadth):length(length),breadth(breadth)
+   {
+
+   }
+   friend void calcArea(Rectangle s); 
+  
+};
+void calcArea(Rectangle s){
+   cout<<s.length * s.breadth;
+   }
+int main()
+   {
+      int len,bre;
+      cin>>len>>bre;
+      Rectangle s(len,bre);
+      calcArea(s);
+  
+      return 0;
+}
+
+4.Book
+Create a union named book with the following members
+Name
+Price
+In the main method, get the inputs from the user and print them.
+#include<iostream>
+using namespace std;
+union book
+{
+  char name[20] ;
+  int price ;
+}u;
+
+int main()
+{
+  cin >> u.name ;
+  cout << u.name << " " ;
+  cin >> u.price ;
+  cout << u.price ;
+  return 0 ;
+}
+
+5.Create a class Distance with speed, time, and constructor as its public attributes
+Declare a friend function
+int calcDistance(Distance) - calculates and prints the distance
+In the main method, create an object for Distance and drive the necessary methods.
+#include <bits/stdc++.h>
+using namespace std;
+
+class Distance {
+    public:
+        int speed;
+        int time;
+        Distance() {
+            speed = 0;
+            time = 0;
+        }
+    friend int calcDistance(Distance);
+        
+};
+int calcDistance(Distance d) {
+    float dis = d.speed*d.time;
+    cout <<fixed<<setprecision(2)<< dis;
+}
+
+int main() {
+    Distance d;
+    cin>>d.speed>>d.time;
+    calcDistance(d);
+    return 0;
+}
