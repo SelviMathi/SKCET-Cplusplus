@@ -134,15 +134,6 @@ class Bicycle
         speed = speed;
     }
          
-    void applyBrake(int decrement)
-    {
-        speed -= decrement;
-    }
-         
-    void speedUp(int increment)
-    {
-        speed += increment;
-    }
     void display() {
         cout<<gear<<" "<<speed;
     }
@@ -158,11 +149,6 @@ class MountainBike : public Bicycle
     {
         Bicycle :: input(gear,speed);
         seatHeight = startHeight;
-    } 
-         
-    void setseatHeight(int newValue)
-    {
-        seatHeight = newValue;
     } 
     void display() {
         cout<<"\n"<<seatHeight;
