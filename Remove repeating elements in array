@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int arr[100],inloop;
+int noe;
+cin>>noe;
+for(int count=0;count<noe;count++)
+   cin>>arr[count];
+   
+   
+    for(int start=0;start<noe-1;start++)
+{
+   for(int inloop=start+1;inloop<noe;inloop++)
+{
+if (arr[start]==arr[inloop])
+{
+for(int inloop1=inloop;inloop1<noe;inloop1++)
+arr[inloop1]=arr[inloop1+1];
+noe--;
+inloop--;
+}
+}
+}
+   for(int count=0;count<noe;count++)
+   cout<<arr[count]<<" ";
+}
