@@ -22,20 +22,20 @@ class Overloading
 	{
 	   name = "Argentina";
 	   temp = 29;
-	   cout<<name<<" Yesterday Temperature: "<<temp<<"°"<<endl;
+	   cout<<name<<" Yesterday Temperature: "<<temp<<"\u00b0"<<endl;
 	}
 	Overloading(string nam, int tem ) 
 	{
 	   name = nam;
 	   temp = tem;
-	   cout<<name<<" Today Temperature: "<<temp<<"°"<<endl;
+	   cout<<name<<" Today Temperature: "<<temp<<"\u00b0"<<endl;
 	}
 	Overloading(string nam, string day, int tem ) 
 	{
 	   name = nam;
 	   temp = tem;
 	   Day  = day;
-	   cout<<name<<" "<<Day<<" Temperature: "<<temp<<"°"<<endl;
+	   cout<<name<<" "<<Day<<" Temperature: "<<temp<<"\u00b0"<<endl;
 	}			
 };
  
@@ -195,4 +195,33 @@ Write a program to find the area of the wall. Create a class Wall with the follo
 length - double
 height - double
 Include parameterized constructor Wall(double length, double height) and a method calculateArea() which returns the area of the wall. In the main method get the length and breadth of two walls from the user.
-
+// You are usi
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class Wall
+{
+    private:
+    double len,ht;
+    public:
+    Wall(double l,double h)
+    {
+        len=l;
+        ht=h;
+    }
+    double Area()
+    {
+        return len*ht;
+    }
+};
+int main()
+{
+    double le,he,le1,he1;
+    cin>>le>>he;
+    Wall ob(le,he);
+    cout<<"Area of Wall 1: "<<ob.Area()<<endl;
+    cin>>le1>>he1;
+    Wall ob1(le1,he1);
+    cout<<"Area of Wall 2: "<<ob1.Area();
+    return 0;
+}
