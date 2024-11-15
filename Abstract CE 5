@@ -1,0 +1,323 @@
+1.Alphabetics Game:
+
+You have to enter four letters for each uppercase letter you will get 10 marks and for each lowercase letter, you will get -5 marks.
+
+Write a program to calculate the total score.
+
+Create a base class with a virtual method void game(). Define this method in the Derived class and calculate the total score.
+
+#include <iostream>
+
+using namespace std;
+class Base{
+    public:
+   
+    virtual void game()=0;
+};
+class Derived: public Base{
+    public:
+    char a,b,c,d;
+    int s=0;
+    void game() override{
+        if(a>='A'&&a<='Z'){
+           s=s+10; 
+        }
+        else{
+            s=s-5;
+        }
+        if(b>='A'&&b<='Z'){
+           s=s+10; 
+        }
+        else{
+            s=s-5;
+        }
+        if(c>='A'&&c<='Z'){
+           s=s+10; 
+        }
+        else{
+            s=s-5;
+        }
+        if(d>='A'&&d<='Z'){
+           s=s+10; 
+        }
+        else{
+            s=s-5;
+        }
+        cout<<"Score : "<<s;
+    }
+};
+
+int main()
+{
+  Derived dd;
+   cin>>dd.a>>dd.b>>dd.c>>dd.d;
+   dd.game();
+   
+   return 0;
+}
+
+2.Problem Statement:
+
+Write a program to find that whether the given number(x) is even or odd if it is even then print the cube(x)+square(x) else print cube(x)-square(x).
+
+Create a base class with a virtual function void print(). print the result by implementing this virtual function in the derived class.
+
+#include <iostream>
+
+using namespace std;
+class A{
+    public:
+   
+    virtual void print()=0;
+};
+class B: public A{
+    public:
+    int x=9;
+    int EvenOrOdd(int a) {
+        if(a%2==0) return 1;
+        else return 0;
+    }
+    int cube(int n) {
+        return (n*n*n);
+    }
+    int square(int n) {
+        return (n*n);
+    }
+    int sum(int a,int b){
+        return (a+b);
+    }
+    int sub(int a,int b) {
+        return (a-b);
+    }
+    void print() override{
+        cout<<x;
+    }
+};
+
+int main()
+{
+   int n;
+   cin>>n;
+   B ob;
+   
+   if(ob.EvenOrOdd(n)==1){
+       ob.x=ob.sum(ob.cube(n),ob.square(n));
+       ob.print();
+   }
+   else{
+       ob.x=ob.sub(ob.cube(n),ob.square(n));
+       ob.print();
+   }
+   
+   return 0;
+}
+
+3.Problem Statement:
+
+Create a base class ItemType with one virtual function
+
+double calculateAmount()
+
+
+
+Create a class wooden that extends ItemType with a number of items and cost as its private attributes. Obtain the data members and override the virtual function.
+
+amount = number of items*cost
+
+Create a class electronics that extend ItemType with cost as its private attribute. Obtain the data member and override the virtual function.
+
+amount = 80% of the amount (20% discount)
+
+
+
+In the main method, obtain a choice
+
+If the choice is 1, create an object for the wooden class and call the method.
+
+If the choice is 2, create an object for the electronics class and call the method.
+#include<bits/stdc++.h>
+using namespace std;
+
+class ItemType
+{
+public:
+	virtual double calculateAmount() = 0;
+};
+
+class wooden: public ItemType
+{
+    int noOfItems;
+    double cost;
+    public:
+        int get()
+        {
+            cin>>noOfItems>>cost;
+        }
+        double calculateAmount()
+        {
+            return noOfItems*cost;
+        }
+	    
+};
+
+class electronics: public ItemType
+{
+    double cost;
+    public:
+        int get()
+        {
+            cin>>cost;
+        }
+        double calculateAmount()
+        {
+            double discount = cost * 0.20;
+            return (cost-discount);
+        }
+	    
+};
+
+int main()
+{
+    int choice;
+    cin>>choice;
+    if(choice ==1)
+    {
+        wooden w;
+        w.get();
+        cout<<fixed<<setprecision(2)<<w.calculateAmount();
+    }
+    if(choice ==2)
+    {
+        electronics e;
+        e.get();
+        cout<<fixed<<setprecision(2)<<e.calculateAmount();
+    }
+    
+}
+
+4.Problem Statement:
+
+Write a Program to calculate the current bill.
+
+Create a class currentBill with a virtual method double amount().
+
+Create a Fan
+
+Create a class Fan that extends currentBill with watts and hours as its public attributes and overrides the virtual function.
+
+Create a class Light that extends currentBill with watts and hours as its public attributes and overrides the virtual function.
+
+Create a class TV that extends currentBill with watts and hours as its public attributes and overrides the virtual function.
+
+
+
+In the main method, prompt the user to enter the power rate of the appliance and the total hours used then create the necessary objects and call the methods.
+
+using namespace std;
+class currentBill{
+    public:
+   
+    virtual double amount()=0;
+};
+
+class Fan: public currentBill{
+    public:
+    int watts,hrs;
+    double amount(){
+        double t=watts*hrs;
+        double a= (t/1000)*1.5;
+        return a;
+    }
+};
+
+class Light: public currentBill{
+    public:
+    int watts,hrs;
+    double amount(){
+        double t=watts*hrs;
+        double a= (t/1000)*1.5;
+        return a;
+    }
+};
+class TV: public currentBill{
+    public:
+    int watts,hrs;
+    double amount(){
+        double t=watts*hrs;
+        double a= (t/1000)*1.5;
+        return a;
+    }
+};
+int main()
+{
+   Fan f;
+   cin>>f.watts>>f.hrs;
+   Light l;
+   cin>>l.watts>>l.hrs;
+   TV t;
+   cin>>t.watts>>t.hrs;
+   cout<<f.amount()+l.amount()+t.amount();
+   return 0;
+}
+
+5.Problem Statement:
+
+Create a base class named operationsBase with the following four virtual functions
+
+void addition()
+
+void subtraction()
+
+void multiplication()
+
+void division()
+
+Create a derived class named operationsDerived that extends operationsBase with a and b as its private attributes and override the virtual functions.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class operationsBase
+{
+public:
+	virtual void addition() = 0;
+	virtual void subtraction() = 0;
+	virtual void multiplication() = 0;
+	virtual void division() = 0;
+};
+class operationsDerived : public operationsBase
+{
+	int a,b;
+    public:
+	int get()
+	{
+	    cin>>a>>b;
+	}
+	void addition()
+	{
+	    cout<<a+b<<" ";
+	}
+	void subtraction()
+	{
+	    cout<<a-b<<" ";
+	}
+	void multiplication()
+	{
+	    cout<<a*b<<" ";
+	}
+	void division()
+	{
+	    cout<<a/b<<" ";
+	}
+};
+
+int main()
+{
+	operationsDerived od;
+	od.get();
+	od.addition();
+	od.subtraction();
+	od.multiplication();
+	od.division();
+	return 0;
+}
