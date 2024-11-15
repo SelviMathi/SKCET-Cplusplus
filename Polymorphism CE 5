@@ -1,0 +1,201 @@
+1..Employee Salary Calculator
+You are tasked with developing a program to calculate the salaries of employees, both full-time and part-time. The program should prompt the user to select the type of employee (Full-Time or Part-Time) and then gather the necessary input to calculate the salary for the chosen employee type.
+Here are the specific requirements for the program:
+Implement a base class called "Employee" with a virtual function calculateSalary().
+Create two derived classes, "FullTimeEmployee" and "PartTimeEmployee," each with their own calculateSalary() functions.
+For a "FullTimeEmployee," the program should calculate the total salary by adding the base salary and the bonus.
+For a "PartTimeEmployee," the program should:calculate the total salary by multiplying the hourly rate by the hours worked.
+In the main() function, the program should, based on the user's choice, create an object of the appropriate employee type.
+Call the calculateSalary() function on the created object to calculate and display the total salary.
+
+
+// You are using GCC
+#include<iostream>
+using namespace std;
+class Employee
+{
+public:
+int salary;
+
+virtual void cal_salary()
+{
+    cout<<"Total Salary: "<<endl;
+}
+};
+class FullTimeEmployee:public Employee
+{
+  public:   void cal_salary(int a,int b)
+    {
+        cout<<"Total Salary: "<<a+b<<endl;
+    }
+};
+class PartTimeEmployee:public Employee
+{
+  public:  void cal_salary(int a,int b)
+    {
+        cout<<"Total Salary: "<<a*b<<endl;
+    }
+};
+int main()
+{
+    int ch;
+    cin>>ch;
+    if(ch==1)
+{
+    int s,b;
+    cin>>s>>b;
+    FullTimeEmployee ob;
+    ob.cal_salary(s,b);
+}
+else
+{
+    int s,b;
+    cin>>s>>b;
+    PartTimeEmployee ob1;
+    ob1.cal_salary(s,b);
+}
+return 0;
+}
+2..Function Overloading
+
+Write a program to implement function overloading.
+
+Ram is given two or three inputs as an integer, if he has two integers then add the two numbers. If he has three inputs, then multiply the three numbers.
+
+Function Header:
+
+public void fun1(int a,int b,int c)
+
+public void fun1(int a,int b)
+
+#include <bits/stdc++.h>
+using namespace std;
+class Fun {
+public:
+    int fun1(int num1,int num2) {
+        return num1+num2;
+    }
+    int fun1(int num1,int num2, int num3) {
+       return num1*num2*num3;
+    }
+};
+int main() {
+    Fun obj;
+    int i,n;
+    cin>>n;
+    int arr[n];
+    for(i=0;i<n;i++)
+        cin>>arr[i];
+    if(n==2)
+        cout<<obj.fun1(arr[0],arr[1]);
+    else if(n==3)
+        cout<<obj.fun1(arr[0],arr[1],arr[2]);
+    else
+        cout<<"Invalid Input";
+    return 0;
+}
+
+3.Problem Statement:
+
+Create two functions with the same name "add"
+
+int add(int, int) - that takes two integer inputs as parameters and adds them.
+
+float add(float, float) - that takes two float values as parameters and adds them.
+
+In the main method, get the inputs and pass them to the functions.
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+        int add(int n1,int n2)
+        {
+            return n1+n2;
+        }
+              float add(float n,float m)
+        {
+            return n+m;
+        }
+
+int main()
+{
+    int num1,num2;
+    float num3,num4;
+    cin>>num1>>num2>>num3>>num4;
+       cout<<"Integer:"<<add(num1,num2)<<endl;
+    cout<<"Float:"<<fixed<<setprecision(2)<<add(num3,num4)<<endl;
+    return 0;
+}
+
+4..Problem Statement:
+
+Write a program defining 3 functions with the same name "calc" which performs the mathematical operations of Square, Modulus, and Division.
+
+
+
+Function for Square takes in one integer argument and returns an integer value
+Function for Modulus takes 2 integer arguments and returns an integer value
+Function for Division takes 2 floating-point arguments and returns and float value
+
+sing namespace std;
+int calc(int a)
+{
+    return (a*a);
+}
+int calc(int a, int b)
+{
+    return (a%b);
+}
+float calc(float a, float b)
+{
+    return (a/b);
+}
+int main()
+{
+    int x,y,ch;
+    float n1,n2;
+    cin>>x>>y>>n1>>n2;
+    cout<<"Square of "<<x<<": "<<calc(x)<<endl;
+    cout<<"Modulus of "<<x<<", "<<y<<": "<<calc(x,y)<<endl;
+    cout<<"Quotient of "<<n1<<", "<<n2<<": "<<fixed<<setprecision(2) <<calc(n1,n2);
+    return 0;
+}
+
+5.Problem Statement:
+
+Operator Overloading:
+
+C++ provides an option to overload operators. When placed between integer operands, a single operator ‘+’ adds them and concatenates them when placed between string operands.
+
+Write a program to overload the operator('+') to compute the sum of complex numbers.
+
+#include<iostream> 
+using namespace std; 
+class Complex { 
+private: 
+	int real, imag; 
+public: 
+	Complex(int r = 0, int i =0) {
+	    real = r; imag = i;
+	    
+	} 
+	Complex operator + (Complex const &obj) { 
+		Complex res; 
+		res.real = real + obj.real; 
+		res.imag = imag + obj.imag; 
+		return res; 
+	} 
+	void print() { 
+	    cout << real << " + i" << imag << endl; 
+	    
+	} 
+}; 
+
+int main() 
+{ 
+    int r1,i1,r2,i2;
+    cin>>r1>>i1>>r2>>i2;
+	Complex c1(r1, i1), c2(r2, i2); 
+	Complex c3 = c1 + c2; 
+	c3.print(); 
+} 
