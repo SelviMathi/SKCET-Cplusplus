@@ -1,0 +1,36 @@
+1. Drivimg license
+#include <bits/stdc++.h>       
+using namespace std;
+int main() {
+    int age,score;
+    cin>>age>>score;
+    cout<<age<<" "<<score<<"\n";
+    try {
+    if(age<18)
+    {
+        throw(age);
+    }
+    else
+    {
+        try {
+            if(score<40)
+            {
+                throw(score);
+            }
+        }
+        catch(int e) {
+            cout<<"You should get atleast 40 marks";
+        }
+        if(score>=40)
+        {
+            cout<<"Passed";   
+        }
+    }
+    }
+    catch (int e)
+    {
+        cout<<"Invalid age"<<"\n";
+    }
+}
+
+2.
