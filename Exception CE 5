@@ -81,3 +81,64 @@ int n;
     for(int i=0;i<n;i++){
         cout<<sort[i]<<endl;
     }
+4.insert at position
+#include <iostream>
+#include <stdexcept>
+
+int main() {
+    int n;
+    std::cin >> n;
+
+    int* myArray = new int[n];
+for (int i = 0; i < n; i++) {
+        std::cin >> myArray[i];
+    }
+
+    int position, value;
+    std::cin >> position >> value;
+
+    try {
+        if (position < 0 || position >= n) {
+            throw std::out_of_range("Index out of bounds");
+        }
+        myArray[position] = value;
+    } catch (const std::out_of_range& oor) {
+        std::cout << oor.what() << "\n";
+    }
+
+    for (int i = 0; i < n; i++) {
+        std::cout << myArray[i] << " ";
+    }
+
+    delete[] myArray; // Don't forget to free the memory allocated for the array.
+    return 0;
+}
+5.Data type Exception
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a;
+    cin>>a;
+    try
+        {
+            if(a==1)
+                throw a;                  
+            else if(a==2)
+                throw 'A'; 
+            else if(a==3)
+                throw 4.5;                
+        }
+        catch(int a)
+            {
+                cout<<"Integer exception caught.\n";
+             }
+        catch(char ch)
+            {
+                cout<<"Character exception caught.\n";
+            }
+        catch(double d)
+            {
+                cout<<"Double exception caught.\n";
+            }
+}
