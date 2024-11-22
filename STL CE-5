@@ -1,0 +1,132 @@
+1.sort number in descending using vector
+#include <bits/stdc++.h> 
+using namespace std;
+
+int main()
+{
+	vector<int>::iterator iter;
+	vector<int> myVector;
+	int input = 0,n;
+    cin>>n;
+	for (int i = 0; i < n; i++) 
+	{
+		cin >> input;
+		myVector.push_back(input);
+		
+	}
+	sort(myVector.begin(), myVector.end(), greater<int>()); 
+    cout << "Sorted:\n"; 
+    for (iter = myVector.begin(); iter != myVector.end(); iter++)
+	  cout << (*iter) << " ";
+	return 0;
+}
+2.sort char in descending using sort algorithm
+#include <iostream> 
+#include <algorithm> 
+  
+using namespace std; 
+  
+void show(char a[],int n) 
+{ 
+    for(int i = 0; i < n; ++i) 
+        cout << a[i] << " "; 
+} 
+  
+int main() 
+{ 
+    int n;
+    cin>>n;
+    char a[n];
+    for(int i=0;i<n;i++)
+        cin>>a[i];
+    cout << "Before sorting: "; 
+    show(a,n); 
+  
+    sort(a, a+n); 
+  
+    cout << "\nAfter sorting: "; 
+    show(a,n); 
+  
+    return 0; 
+}
+3.Sum of unique elements using STL List
+1 5 5 4 1=10
+#include <iostream>
+#include<list>
+using namespace std;
+
+int main()
+{
+    list<int> l;
+    int n,sum = 0;
+    cin>>n;
+    if(n>15)
+    {
+        cout<<"-1";
+        return 0;
+    }
+    int arr[n];
+    for(int i = 0;i<n; i++)
+        cin>>arr[i];
+    l.assign(arr,arr+n);
+    l.sort();
+    l.unique();
+    for (list<int>::iterator x=l.begin(); x!=l.end(); x++) 
+        sum += *x;
+    cout<<"Sum of unique elements:"<<sum;
+    return 0;
+}
+4.Print composite in list
+#include<iostream>
+#include<algorithm>
+#include<cstddef>
+using namespace std;
+
+bool isPrime(int x)
+{
+    bool flag = true;
+    for(int i = 2; i <= x / 2; i++) {
+       if(x % i == 0) {
+          flag = false;
+          break;
+       }
+    }
+    return flag;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    if(n<1 || n>15)
+    {
+        cout<<"-1";
+        return 0;
+    }
+    int a[n],b[n];
+    for(int i = 0;i<n;i++)
+        cin>>a[i];
+    int* endb = remove_copy_if(a,a+n,b,isPrime);
+    int* beginb = b;
+    cout<<"Composite numbers: ";
+    while(beginb != endb)
+        cout<<*beginb++<<" ";
+    return 0;
+}
+5.Complete the given C++ code that prints the multiplication table of a number from an array given its position without using loops.
+Note: Use the concept of vectors and advancing iterator.
+ int size = sizeof(arr) / sizeof(arr[0]); 
+    vector<int> ar(arr, arr + size);
+    int n;
+    cin>>n;
+    if(n<1 || n>10)
+    {
+        cout<<"-1";
+        return 0;
+    }
+    
+    vector<int>::iterator ptr = ar.begin(); 
+    advance(ptr, n-1); 
+ 
+    for (int i = 1; i <= 10; ++i) {
+        cout << *ptr << " * " << i << " = " << (*ptr) * i << endl;
+    }
