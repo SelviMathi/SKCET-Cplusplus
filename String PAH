@@ -113,12 +113,95 @@ int main()
     return 0;
 }
 6.Peter at challenge
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int i,one=0,len;
+    char str[25];
+    cin>>str;
+    len=strlen(str);
+    for(i=0;i<len;i++)
+    {
+        if(str[i]==49){one++;}
+    }
+    if(one>=(len-one)){cout<<"Win";}
+    else{cout<<"Lose";}
+    return 0;
+}
 7.Number Challenge-MIKE
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int i,len,zero=0,one=0;
+    char a[20];
+    cin>>a;
+    len=strlen(a);
+    for(i=0;i<len;i++)
+    {
+        if(a[i]==48){zero++;}
+        else{one++;}
+    }
+    ((zero==1)||(one==1))?cout<<"Yes":cout<<"No";
+    return 0;
+}
 
 
 8.Little Authors
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int i,j,len,c1=0,s=0;
+    char str[30],ch;
+    cin>>str;
+    ch=str[0];
+    len=strlen(str);
+    if(len%2==1){s=0;}
+    else{
+    for(i=0;i<len;i++)
+    {
+        ch=str[i];
+        for(j=0;j<len;j++)
+        {
+            if(ch==str[j]){c1++;}
+        }
+        if(c1==(len-c1)){s=1;break;}
+        c1=0;
+    }
+    }
+    (s==0)?cout<<str<<":No":cout<<str<<":Yes";
+    return 0;
+}
 
 9.Balls for Challenge
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int i,len,c=0;
+    char str1[30],str2[30];
+    cin>>str1>>str2;
+    len=strlen(str1);
+    for(i=0;i<len;i++)
+    {
+        if(str1[i]==str2[i])
+        {
+            (str1[i]==87)?cout<<"B":cout<<"W";
+        }
+        else
+        {
+            c++;
+            (c%2==0)?cout<<str2[i]:cout<<str1[i];
+        }
+    }
+    return 0;
+}
 
 10.Delete vowel
 
