@@ -135,4 +135,89 @@ int main() {
     printNumbers(N);
     return 0;
 }
-7.
+7.#include<iostream>
+using namespace std;
+int summation(int n,int m)
+{
+    if(m==0)
+    return n;
+    if(m!=0)
+    {
+        n=n*(1+n)/2;
+        n=summation(n,m-1);
+    }
+    return n;
+}
+
+int main()
+{
+    int n,m,i;
+    cin>>n;
+    cin>>m;
+    i=summation(n,m);
+    cout<<i;
+    return 0;
+}
+8.#include<iostream>
+using namespace std;
+void printnumbers(int n)
+{
+    static int i=1;
+    if(i<=n)
+    {
+        cout<<i<<" ";
+        i++;
+        printnumbers(n);
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    printnumbers(n);
+    return 0;
+}
+
+9.#include<iostream>
+using namespace std;
+int findPos(int pos)
+{
+    static int x=1;
+    x=x*2;
+    if(pos>x)
+    {
+        return findPos(pos);
+    }
+    if(pos==x){return x;}
+    return x/2;
+}
+int main()
+{
+    int num;
+    cin>>num;
+    cout<<findPos(num);
+    return 0;
+}
+10.
+#include<iostream>
+using namespace std;
+unsigned long long int findSum(int n);
+#include<cmath>
+unsigned long long int findSum(int n)
+{
+    unsigned long long int s=0;int i;
+    for(i=0;i<=n;i++)
+    {
+        s=s+pow(2,i);
+    }
+    return s;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<findSum(n);
+    return 0;
+}
