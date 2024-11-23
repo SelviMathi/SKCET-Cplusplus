@@ -87,27 +87,20 @@ int main() {
 }
 
 5.Conctenate two strings
-#include <iostream>
-#include <string>
-#include <functional>
+// You are using GCC
+#include<iostream>
 using namespace std;
-
-// Define the interface equivalent using a functional type
-using StringConcat = function<string(string, string)>;
-
-int main() {
-    string s1, s2;
-    getline(cin, s1); // Read the first string
-    getline(cin, s2); // Read the second string
-    
-    // Lambda function to concatenate two strings with a space
-    StringConcat s = [](string str1, string str2) -> string {
-        return str1 + " " + str2;
+int main()
+{
+    string str1,str2;
+    cin>>str1>>str2;
+   auto concatenate = [](string str1,string str2)
+    {
+        return str1+" "+str2;
     };
-    
-    // Call the lambda and print the result
-    cout << s(s1, s2) << endl;
+    cout<<concatenate(str1,str2);
 
+}
     return 0;
 }
 
