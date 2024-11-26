@@ -53,35 +53,39 @@ string a;
 
 
 3.sort from files
-int n;
-    cin>>n;
-    int arr[n];
-    ofstream fout;
-    fout.open("sample.txt");
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-        fout<<arr[i]<<endl;
-    }
-    fout.close();
-    ifstream file;
-    file.open("sample.txt");
-    int sort[n];
-     for(int i=0;i<n;i++){
-        file>>sort[i];
-    }
-    for(int i=0;i<n-1;i++){
-        for(int j=i+1;j<n;j++){
-            if(sort[i]>sort[j]){
-            int temp=sort[i];
-            sort[i]=sort[j];
-            sort[j]=temp;
+fstream file;
+   file.open("sample.dat",ios::out);
+   ofstream outdata;
+   int i,j,n,a;
+   cin>>n;
+   int number[n];
+ for (i=0; i<n; ++i)
+ {
+   cin>>number[i];
+ }
+ outdata.open("sample.dat"); 
+for (i=0; i<n; ++i)
+{
+      outdata<<number[i]<<endl;
+}
+   outdata.close();
+for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < (n - i - 1); j++)
+        {
+            if (number[j] > number[j + 1])
+            {
+                a = number[j];
+                number[j] = number[j + 1];
+                number[j + 1] = a;
             }
         }
     }
-    for(int i=0;i<n;i++){
-        cout<<sort[i]<<endl;
-    }
-4.insert at position
+ 
+        for (i = 0; i < n; i++) 
+        {
+            cout<<number[i]<<"\n";
+        }4.insert at position
 #include <iostream>
 #include <stdexcept>
 
